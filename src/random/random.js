@@ -21,6 +21,6 @@ getRandomColor = () => {
 };
 
 module.exports = {
-    getRandomNum: getRandomNum,
-    getRandomColor: getRandomColor
+    getRandomNum,
+    getRandomColor
 };
