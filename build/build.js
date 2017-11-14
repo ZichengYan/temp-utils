@@ -1,9 +1,8 @@
 var ora = require('ora')
 var rm = require('rimraf')
-var path = require('path')
 var chalk = require('chalk')
 var webpack = require('webpack')
-var {build:{output}} = require('./config.js')
+var {build: {output}} = require('./config.js')
 var webpackConfig = require('./webpack.config.js')
 const {resolve} = require('./utils.js')
 
@@ -27,7 +26,6 @@ rm(resolve(output), err => {
             console.log(chalk.red('  Build failed with errors.\n'))
             process.exit(1)
         }
-
-        console.log(chalk.green('  Build complete.\n'))
+        console.log(chalk.yellowBright('Build complete.\n'))
     })
 })
