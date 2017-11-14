@@ -1,0 +1,36 @@
+{
+  "name": "hephaistos",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node  ./build/build.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZichengYan/temp-utils.git"
+  },
+  "keywords": [
+    "utils",
+    "common",
+    "hephaistos"
+  ],
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^6.4.1",
+    "babel-preset-es2015": "^6.24.1",
+    "chalk": "^2.3.0",
+    "ora": "^1.3.0",
+    "rimraf": "^2.6.2",
+    "uglifyjs-webpack-plugin": "^1.0.1",
+    "webpack": "^3.8.1"
+  },
+  "author": "Robert",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ZichengYan/temp-utils/issues"
+  },
+  "homepage": "https://github.com/ZichengYan/temp-utils#readme",
+  "dependencies": {}
+}
