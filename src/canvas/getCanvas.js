@@ -45,6 +45,4 @@ class Canvas {
 }
 
 
-module.exports = {
-    Canvas
-}
+module.exports = {Canvas};

@@ -4,9 +4,9 @@ const {resolve} = require('./utils.js')
 module.exports = {
     entry: resolve('./src/index.js'), // 入口
     output: {
-        path: resolve('../dist'),
+        path: resolve('./dist'),
         filename: `${fileName.name}.js`, // 输出的文件名
-        library: fileName.name,
+        // library: fileName.name,
         libraryTarget: "umd"
     },
     module: {
@@ -20,6 +20,6 @@ module.exports = {
         ]
     },
     plugins: [
-        new webpack.optimize.UglifyJsPlugin()
+        // new webpack.optimize.UglifyJsPlugin()
     ]
 }

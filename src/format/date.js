@@ -38,7 +38,7 @@ module.exports = {
         });
         return format;
     },
-    formatQuick: (timeStamp) => {
+    formatTimeStampQuick: (timeStamp) => {
         // "2017/5/14 20:19"
         return (new Date(parseInt(timeStamp || Date.now()))).toLocaleString().replace(/:\d{1,2}$/, ' ');
     }
