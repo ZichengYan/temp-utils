@@ -6,7 +6,7 @@ module.exports = {
     output: {
         path: resolve('./dist'),
         filename: `${fileName.name}.js`, // 输出的文件名
-        // library: fileName.name,
+        library: fileName.name,
         libraryTarget: "umd"
     },
     module: {
