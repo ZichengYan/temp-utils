@@ -3,7 +3,7 @@ var rm = require('rimraf')
 var chalk = require('chalk')
 var webpack = require('webpack')
 var {build: {output}} = require('./config.js')
-var webpackConfig = require('./webpack.config.js')
+var webpackConfig = require('./webpack.conf.js')
 const {resolve} = require('./utils.js')
 
 var spinner = ora('building for production...')

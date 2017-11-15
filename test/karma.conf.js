@@ -1,11 +1,11 @@
 // Karma configuration
 // Generated on Wed Nov 15 2017 15:31:34 GMT+0800 (CST)
-
+const {resolve} = require('../build/utils.js');
 module.exports = function (config) {
     config.set({
 
         // base path that will be used to resolve all patterns (eg. files, exclude)
-        basePath: '',
+        basePath: '../',
 
 
         // frameworks to use
@@ -15,25 +15,39 @@ module.exports = function (config) {
 
         // list of files / patterns to load in the browser
         files: [
-            'test.main.js',
-            {pattern: 'src/**/*.js', included: true},
-            {pattern: 'test/**/*.test.js', included: false}
+            {pattern: './src/**/*.js', watched: true,included:false},
+            {pattern: './test/**/*.js', watched: true,included:true},
         ],
 
 
         // list of files to exclude
-        exclude: [],
+        exclude: ['./test/karma.conf.js','./test/index.js','./test/z_temp.js'],
 
 
         // preprocess matching files before serving them to the browser
         // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
-        preprocessors: {},
-
-
+        preprocessors: {
+            "test/**/*.test.js": ['webpack', 'coverage'],
+            "src/**/*.js": ['webpack'],
+        },
+        webpack: {
+            module: {
+                loaders: [{
+                    test: /test\.js$/,
+                    loader: 'babel-loader',
+                    exclude: /node_modules/,
+                    include: [resolve('./test/')],
+                    query: {
+                        presets: ['es2015'],
+                        plugins: ['istanbul']
+                    }
+                }]
+            }
+        },
         // test results reporter to use
         // possible values: 'dots', 'progress'
         // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-        reporters: ['progress'],
+        reporters: ['progress', 'coverage'],
 
 
         // web server port
