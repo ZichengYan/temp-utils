@@ -15,9 +15,9 @@ module.exports = function (config) {
 
         // list of files / patterns to load in the browser
         files: [
-            // {pattern: './src/**/*.js', watched: true, included: false},
-            // {pattern: './test/**/*.js', watched: true, included: true},
-            './test/index.js'
+            {pattern: './src/**/*.js', watched: true, included: false},
+            {pattern: './test/**/*.js', watched: true, included: true},
+            // './test/index.js'
         ],
 
 
@@ -49,11 +49,7 @@ module.exports = function (config) {
         // possible values: 'dots', 'progress'
         // available reporters: https://npmjs.org/browse/keyword/karma-reporter
         coverageReporter: {
-            dir: './coverage1',
-            reporters: [
-                {type: 'lcov', subdir: '.'},
-                {type: 'text-summary'}
-            ]
+            dir: './test/coverage'
         },
         reporters: ['coverage'],
 

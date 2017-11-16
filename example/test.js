@@ -1,0 +1,1 @@
+console.log('requirerequirerequire', require.content);
