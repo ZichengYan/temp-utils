@@ -1,7 +1,5 @@
 module.exports = {
     formatDate: (date, format) => {
-        const aaaaaa=1;
-        console.log(aaaaaa);
         if (typeof date === "string") {
             var mts = date.match(/(\/Date\((\d+)\)\/)/);
             if (mts && mts.length >= 3) {

@@ -32,6 +32,7 @@ module.exports = function (config) {
             "./spec/**/*.test.js": ['webpack', 'coverage'],
         },
         webpack: {
+            devtool: '#inline-source-map',
             module: {
                 loaders: [{
                     test: /test\.js$/,
