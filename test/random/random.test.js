@@ -1,7 +1,6 @@
 const {getRandomNum, getRandomColor} = require('../../src/random/random.js');
 const {expect} = require('chai');
 
-console.log('chaichai', expect);
 
 describe('随机数', function () {
     it('随机数在范围之内', function () {

@@ -15,20 +15,21 @@ module.exports = function (config) {
 
         // list of files / patterns to load in the browser
         files: [
-            {pattern: './src/**/*.js', watched: true,included:false},
-            {pattern: './test/**/*.js', watched: true,included:true},
+            // {pattern: './src/**/*.js', watched: true, included: false},
+            // {pattern: './test/**/*.js', watched: true, included: true},
+            './test/index.js'
         ],
 
 
         // list of files to exclude
-        exclude: ['./test/karma.conf.js','./test/index.js','./test/z_temp.js'],
+        exclude: ['./test/karma.conf.js', './test/index.js', './test/z_temp.js'],
 
 
         // preprocess matching files before serving them to the browser
         // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
         preprocessors: {
             "test/**/*.test.js": ['webpack', 'coverage'],
-            "src/**/*.js": ['webpack'],
+            // "src/**/*.js": ['webpack'],
         },
         webpack: {
             module: {
@@ -47,7 +48,14 @@ module.exports = function (config) {
         // test results reporter to use
         // possible values: 'dots', 'progress'
         // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-        reporters: ['progress', 'coverage'],
+        coverageReporter: {
+            dir: './coverage1',
+            reporters: [
+                {type: 'lcov', subdir: '.'},
+                {type: 'text-summary'}
+            ]
+        },
+        reporters: ['coverage'],
 
 
         // web server port
