@@ -1,3 +1,3 @@
 # hephaistos
-### 安装
+### install
 - `npm install`
