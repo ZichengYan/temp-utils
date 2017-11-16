@@ -15,9 +15,9 @@ module.exports = function (config) {
 
         // list of files / patterns to load in the browser
         files: [
-            {pattern: './src/**/*.js', watched: true, included: false},
-            {pattern: './test/**/*.js', watched: true, included: true},
-            // './test/index.js'
+            './test/index.js',
+            // {pattern: './src/**/*.js', watched: true, included: false},
+            // {pattern: './test/**/*.js', watched: true, included: true}
         ],
 
 
@@ -28,20 +28,23 @@ module.exports = function (config) {
         // preprocess matching files before serving them to the browser
         // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
         preprocessors: {
-            "test/**/*.test.js": ['webpack', 'coverage'],
+            "./test/index.js": ['webpack', 'coverage'],
+            // "test/**/*.test.js": ['webpack', 'coverage'],
             // "src/**/*.js": ['webpack'],
         },
         webpack: {
             module: {
                 loaders: [{
                     test: /test\.js$/,
-                    loader: 'babel-loader',
+                    enforce: 'pre',
+                    use: 'istanbul-instrumenter-loader',
+                    // loader: 'babel-loader',
                     exclude: /node_modules/,
                     include: [resolve('./test/')],
-                    query: {
+                  /*  query: {
                         presets: ['es2015'],
                         plugins: ['istanbul']
-                    }
+                    }*/
                 }]
             }
         },
