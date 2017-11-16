@@ -5,7 +5,7 @@ module.exports = function (config) {
     config.set({
 
         // base path that will be used to resolve all patterns (eg. files, exclude)
-        basePath: '../',
+        basePath: './',
 
 
         // frameworks to use
@@ -15,22 +15,21 @@ module.exports = function (config) {
 
         // list of files / patterns to load in the browser
         files: [
-            // './test/index.js',
-            {pattern: './src/**/*.js', watched: true, included: false},
-            {pattern: './test/**/*.js', watched: true, included: true}
+            // './index.js',
+            {pattern: '../src/**/*.js', watched: false, included: false},
+            {pattern: './spec/**/*.js', watched: true, included: true}
         ],
 
 
         // list of files to exclude
-        exclude: ['./test/karma.conf.js', './test/index.js', './test/z_temp.js'],
+        exclude: ['./karma.conf.js', '../src/z_temp.js'],
 
 
         // preprocess matching files before serving them to the browser
         // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
         preprocessors: {
-            // "./test/index.js": ['webpack', 'coverage'],
-            "test/**/*.test.js": ['webpack', 'coverage'],
-            // "src/**/*.js": ['webpack'],
+            // "./index.js": ['webpack', 'coverage'],
+            "./spec/**/*.test.js": ['webpack', 'coverage'],
         },
         webpack: {
             module: {
@@ -41,20 +40,20 @@ module.exports = function (config) {
                     loader: 'istanbul-instrumenter-loader',
                     exclude: /node_modules/,
                     include: [resolve('./test/')],
-                  /*  query: {
-                        presets: ['es2015'],
-                        plugins: ['istanbul']
-                    }*/
+                    /*  query: {
+                          presets: ['es2015'],
+                          plugins: ['istanbul']
+                      }*/
                 }]
             }
         },
         // test results reporter to use
         // possible values: 'dots', 'progress'
         // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-        coverageReporter: {
-            dir: './test/coverage'
-        },
         reporters: ['coverage'],
+        coverageReporter: {
+            dir: './coverage'
+        },
 
 
         // web server port

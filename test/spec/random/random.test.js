@@ -1,4 +1,4 @@
-const {getRandomNum, getRandomColor} = require('../../src/random/random.js');
+const {getRandomNum, getRandomColor} = require('../../../src/random/random.js');
 const {expect} = require('chai');
 
 
