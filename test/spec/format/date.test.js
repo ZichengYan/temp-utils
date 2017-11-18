@@ -1,4 +1,5 @@
 const {formatDate, formatTimeStampQuick} = require('../../../src/format/date.js');
+const {expect} = require('chai');
 
 describe('正则匹配', function () {
     it('时间戳格式化', function () {
