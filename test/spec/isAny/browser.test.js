@@ -1,14 +1,9 @@
-const {browser} = require('../regExp/commonRegExp.js');
+const {whichBrowser} = require('../../../src/isAny/browser.js');
 const {expect} = require('chai');
 
-function whichBrowser() {
-    const userAgent = navigator.userAgent;
-    let key, result;
-    for (key in browser) {
-        result = userAgent.match(browser[key]);
-        if (result) {
-            return result;
-        }
-    }
-}
-module.exports={whichBrowser};
+describe('判断浏览器', function () {
+    it('浏览器', function () {
+        expect(whichBrowser()).to.be.true;
+    });
+});
+

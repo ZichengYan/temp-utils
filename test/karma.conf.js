@@ -17,7 +17,7 @@ module.exports = function (config) {
         files: [
             // './index.js',
             {pattern: '../src/**/*.js', watched: false, included: false},
-            {pattern: './spec/**/*.js', watched: true, included: true}
+            {pattern: './spec/**/*.js', watched: false, included: true}
         ],
 
 

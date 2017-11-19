@@ -1,7 +1,12 @@
-const isJson = (obj) => {
-    //判断obj是否为json对象
-    var isjson = (typeof(obj) == "object" && Object.prototype.toString.call(obj).toLowerCase() == "[object object]" && !obj.length);
-    //obj.length 排除伪数组
-    return isjson;
-}
-module.exports = {isJson};
+const {isJson} = require('../../../src/isAny/isJson.js');
+const {expect} = require('chai');
+
+describe('是否为json', function () {
+    it('是json', function () {
+        let str={"a":"1"};
+        expect(isJson(JSON.stringify(str))).to.be.true;
+    });
+    it('不是json', function () {
+        expect(isJson({a: 1})).to.not.be.true;
+    });
+});
