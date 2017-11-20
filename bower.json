@@ -1,0 +1,27 @@
+{
+  "name": "hephaistos",
+  "version":"0.2.7",
+  "description": "utils",
+  "main": "index.js",
+  "authors": [
+    "Robert"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "utils",
+    "hephaistos"
+  ],
+  "homepage": "https://github.com/ZichengYan/hephaistos",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "/test",
+    "tests",
+    "build",
+    "/build",
+    "example",
+    "/example"
+  ]
+}
