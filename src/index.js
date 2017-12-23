@@ -1,4 +1,5 @@
 const {Canvas} = require('./canvas/getCanvas.js');
+const {turnDirection} = require('./canvas/turnDirection.js');
 const {formatDate, formatTimeStampQuick} = require('./format/date.js');
 const {formatMoney} = require('./format/money.js');
 const {whichBrowser} = require('./isAny/browser.js');
@@ -18,6 +19,7 @@ const {
 module.exports = {
     formatDate, formatTimeStampQuick,
     Canvas,
+    turnDirection,
     formatDate,
     formatMoney,
     whichBrowser,
